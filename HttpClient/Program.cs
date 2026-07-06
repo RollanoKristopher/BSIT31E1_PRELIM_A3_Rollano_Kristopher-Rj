@@ -6,9 +6,12 @@ using System.Text.Json;
 
 HttpClient client = new HttpClient();
 
-// ===============================
+// ==========================================================================
 // GET - Retrieve all weather data
-// ===============================
+// The GET method retrieves data from the API.
+// In this program, it requests the list of weather forecasts from the server
+// and displays the response in the Console App.
+// ==========================================================================
 Console.WriteLine("===== GET =====");
 
 var getResponse = await client.GetAsync("https://localhost:7252/weatherforecast");
@@ -20,9 +23,12 @@ string getResult = await getResponse.Content.ReadAsStringAsync();
 Console.WriteLine(getResult);
 
 
-// =================================
+// =============================================================
 // POST - Create a new weather record
-// =================================
+// The POST method sends new data to the API.
+// In this program, it creates a new weather forecast by sending
+// a JSON object to the server.
+// =============================================================
 Console.WriteLine("\n===== POST =====");
 
 var postRequest = new
@@ -50,9 +56,12 @@ string postResult = await postResponse.Content.ReadAsStringAsync();
 Console.WriteLine(postResult);
 
 
-// ===============================
+// ===============================================================
 // PUT - Update a weather record
-// ===============================
+// The PUT method updates existing data in the API.
+// In this program, it sends modified weather forecast information
+// to replace or update an existing forecast on the server.
+// ===============================================================
 Console.WriteLine("\n===== PUT =====");
 
 var putRequest = new
@@ -80,9 +89,12 @@ string putResult = await putResponse.Content.ReadAsStringAsync();
 Console.WriteLine(putResult);
 
 
-// ==================================
-// DELETE - Delete weather record #1
-// ==================================
+// ===================================================
+// DELETE - Delete 
+// The DELETE method removes data from the API.
+// In this program, it requests the server to delete
+// a weather forecast using its identifier (date).
+// ===================================================
 Console.WriteLine("\n===== DELETE =====");
 
 var deleteResponse =
